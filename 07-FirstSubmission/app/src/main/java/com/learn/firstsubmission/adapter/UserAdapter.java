@@ -1,6 +1,7 @@
 package com.learn.firstsubmission.adapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.learn.firstsubmission.R;
+import com.learn.firstsubmission.activity.DetailActivity;
 import com.learn.firstsubmission.model.User;
+import com.learn.firstsubmission.network.UrlServer;
 
 import java.util.List;
 
@@ -44,8 +47,12 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         holder.bind(userList.get(position));
         holder.container.setOnClickListener(v -> {
             user = userList.get(position);
-            Toast.makeText(activity, userList.get(holder.getAdapterPosition()).getLogin(),
-                    Toast.LENGTH_SHORT).show();
+//            Toast.makeText(activity, userList.get(holder.getAdapterPosition()).getLogin(),
+//                    Toast.LENGTH_SHORT).show();
+            Intent intentDetail = new Intent(activity, DetailActivity.class);
+            intentDetail.putExtra(UrlServer.PARCEL, user);
+            activity.startActivity(intentDetail);
+            activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         });
     }
 

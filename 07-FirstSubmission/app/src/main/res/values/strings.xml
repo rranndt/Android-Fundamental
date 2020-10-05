@@ -1,5 +1,13 @@
 <resources>
-    <string name="app_name">FirstSubmission</string>
+    <string name="app_name">GithubUser</string>
     <string name="username">Username</string>
     <string name="url">Url</string>
+    <string name="app_version">App Version</string>
+    <string name="toolbar_name">Toolbar Name</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="repository">Repository</string>
+    <string name="location">Location</string>
+    <string name="type">Type</string>
+    <string name="company">Company</string>
 </resources>

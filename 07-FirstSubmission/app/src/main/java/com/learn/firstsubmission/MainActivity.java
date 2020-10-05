@@ -47,7 +47,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void initViews() {
         recyclerView = findViewById(R.id.rv_list);
-//        shimmer = findViewById(R.id.shimmer_container);
+        shimmer = findViewById(R.id.shimmer_container);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(getString(R.string.app_name));
+        }
     }
 
     private void setupRecycler() {
@@ -66,7 +70,8 @@ public class MainActivity extends AppCompatActivity {
                     if (response.body() != null) {
                         adapter = new UserAdapter(response.body(), MainActivity.this);
                         recyclerView.setAdapter(adapter);
-//                        shimmer.setVisibility(View.GONE);
+                        shimmer.stopShimmer();
+                        shimmer.setVisibility(View.GONE);
                     }
                 } catch (Exception e) {
                     Log.e("onResponse: ", MainActivity.class.getSimpleName());
