@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,13 +16,13 @@ import com.learn.myrecyclerview.model.Hero;
 
 import java.util.ArrayList;
 
-public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListViewHolder> {
+public class GridHeroAdapter extends RecyclerView.Adapter<GridHeroAdapter.GridViewHolder> {
 
     private ArrayList<Hero> listHero;
     private OnItemClickCallback onItemClickCallback;
 
-    public ListHeroAdapter(ArrayList<Hero> list) {
-        this.listHero = list;
+    public GridHeroAdapter(ArrayList<Hero> listHero) {
+        this.listHero = listHero;
     }
 
     public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
@@ -32,22 +31,17 @@ public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListVi
 
     @NonNull
     @Override
-    public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_row_hero, parent, false);
-        return new ListViewHolder(view);
+    public GridHeroAdapter.GridViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_grid_hero, parent, false);
+        return new GridViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
-        Hero hero = listHero.get(position);
-
+    public void onBindViewHolder(@NonNull final GridHeroAdapter.GridViewHolder holder, int position) {
         Glide.with(holder.itemView.getContext())
-                .load(hero.getPhoto())
-                .apply(new RequestOptions().override(55,55))
+                .load(listHero.get(position).getPhoto())
+                .apply(new RequestOptions().override(350,350))
                 .into(holder.imgPhoto);
-
-        holder.tvName.setText(hero.getName());
-        holder.tvDescription.setText(hero.getDescription());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,15 +56,13 @@ public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListVi
         return listHero.size();
     }
 
-    public class ListViewHolder extends RecyclerView.ViewHolder {
-        private ImageView imgPhoto;
-        private TextView tvName, tvDescription;
+    public class GridViewHolder extends RecyclerView.ViewHolder {
 
-        public ListViewHolder(@NonNull View itemView) {
+        private ImageView imgPhoto;
+
+        public GridViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgPhoto = itemView.findViewById(R.id.image_photo);
-            tvName = itemView.findViewById(R.id.tv_item_name);
-            tvDescription = itemView.findViewById(R.id.tv_item_description);
+            imgPhoto = itemView.findViewById(R.id.img_item_photo);
         }
     }
 }
