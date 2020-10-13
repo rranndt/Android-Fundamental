@@ -16,11 +16,15 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, DialogListener {
 
     private TextView tvOnceDate,
-            tvOnceTime;
-    private EditText edtOnceMessage;
+            tvOnceTime,
+            tvRepeatingTime;
+    private EditText edtOnceMessage,
+            edtRepeatingMessage;
     private ImageButton btnOnceDate,
-            btnOnceTime;
-    private Button btnSetOnce;
+            btnOnceTime,
+            btnRepeatingTime;
+    private Button btnSetOnce,
+            btnSetRepeating;
 
     private AlarmReceiver alarmReceiver;
 
@@ -33,16 +37,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initViews();
+        initListener();
+    }
+
+    private void initViews() {
         tvOnceDate = findViewById(R.id.tv_once_date);
         tvOnceTime = findViewById(R.id.tv_once_time);
+        tvRepeatingTime = findViewById(R.id.tv_repeating_time);
         edtOnceMessage = findViewById(R.id.edt_once_message);
+        edtRepeatingMessage = findViewById(R.id.edt_repeating_message);
         btnOnceDate = findViewById(R.id.btn_once_date);
         btnOnceTime = findViewById(R.id.btn_once_time);
+        btnRepeatingTime = findViewById(R.id.btn_repeating_time);
         btnSetOnce = findViewById(R.id.btn_set_once_alarm);
+        btnSetRepeating = findViewById(R.id.btn_set_repeating_alarm);
+    }
 
+    private void initListener() {
         btnOnceDate.setOnClickListener(this);
         btnOnceTime.setOnClickListener(this);
         btnSetOnce.setOnClickListener(this);
+        btnRepeatingTime.setOnClickListener(this);
+        btnSetRepeating.setOnClickListener(this);
 
         alarmReceiver = new AlarmReceiver();
     }
@@ -68,6 +85,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         onceTime,
                         onceMessage);
                 break;
+            case R.id.btn_repeating_time:
+                TimePickerFragment timePickerFragment = new TimePickerFragment();
+                timePickerFragment.show(getSupportFragmentManager(), TIME_PICKER_REPEAT_TAG);
+                break;
+            case R.id.btn_set_repeating_alarm:
+                String repeatTime = tvRepeatingTime.getText().toString();
+                String repeatMessage = edtRepeatingMessage.getText().toString();
+                alarmReceiver.setRepeatingAlarm(this, AlarmReceiver.TYPE_REPEATING,
+                        repeatTime, repeatMessage);
+                break;
         }
     }
 
@@ -91,6 +118,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (tag) {
             case TIME_PICKER_ONCE_TAG:
                 tvOnceTime.setText(dateFormat.format(calendar.getTime()));
+                break;
+            case TIME_PICKER_REPEAT_TAG:
+                tvRepeatingTime.setText(dateFormat.format(calendar.getTime()));
                 break;
             default:
                 break;
