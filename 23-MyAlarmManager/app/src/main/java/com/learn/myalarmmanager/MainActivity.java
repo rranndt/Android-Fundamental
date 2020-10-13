@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             btnOnceTime,
             btnRepeatingTime;
     private Button btnSetOnce,
-            btnSetRepeating;
+            btnSetRepeating,
+            btnCancelRepeating;
 
     private AlarmReceiver alarmReceiver;
 
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnRepeatingTime = findViewById(R.id.btn_repeating_time);
         btnSetOnce = findViewById(R.id.btn_set_once_alarm);
         btnSetRepeating = findViewById(R.id.btn_set_repeating_alarm);
+        btnCancelRepeating = findViewById(R.id.btn_cancel_repeating_alarm);
     }
 
     private void initListener() {
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSetOnce.setOnClickListener(this);
         btnRepeatingTime.setOnClickListener(this);
         btnSetRepeating.setOnClickListener(this);
+        btnCancelRepeating.setOnClickListener(this);
 
         alarmReceiver = new AlarmReceiver();
     }
@@ -94,6 +97,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String repeatMessage = edtRepeatingMessage.getText().toString();
                 alarmReceiver.setRepeatingAlarm(this, AlarmReceiver.TYPE_REPEATING,
                         repeatTime, repeatMessage);
+                break;
+            case R.id.btn_cancel_repeating_alarm:
+                alarmReceiver.cancelAlarm(this, AlarmReceiver.TYPE_REPEATING);
                 break;
         }
     }
