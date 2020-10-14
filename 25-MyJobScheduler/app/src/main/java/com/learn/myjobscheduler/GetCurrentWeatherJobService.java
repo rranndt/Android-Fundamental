@@ -61,12 +61,12 @@ public class GetCurrentWeatherJobService extends JobService {
                     String currentWeather = responseObject.getJSONArray("weather").getJSONObject(0).getString("main");
                     String description = responseObject.getJSONArray("weather").getJSONObject(0).getString("description");
                     double tempInKelvin = responseObject.getJSONObject("main").getDouble("temp");
-                    double tempInCelcius = tempInKelvin - 273;
 
+                    // Menampilkan notifikasi
+                    double tempInCelcius = tempInKelvin - 273;
                     String temprature = new DecimalFormat("##.##").format(tempInCelcius);
                     String title = "Current Weather";
                     String message = currentWeather + ", " + description + " with " + temprature + " celcius";
-
                     int notifId = 100;
 
                     showNotification(getApplicationContext(), title, message, notifId);
