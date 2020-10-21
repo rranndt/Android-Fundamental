@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">SecondSubmission</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="github_logo">Github Logo Image</string>
+    <string name="app_version">App Version</string>
+    <string name="copyright">Copyright 2020</string>
+    <string name="search">Cari</string>
+    <string name="search_button">Search Button</string>
+    <string name="search_text1">Silakan Lakukan Percarian!</string>
+    <string name="search_text2">Hasil Akan Terupdate Otomatis</string>
+    <string name="username">Username</string>
+    <string name="html_url">Html Url</string>
+    <string name="view_search">View Search</string>
+    <string name="user_not_found">Pengguna Tidak Ditemukan!</string>
+    <string name="user_not_found2">Silakan Cari Lebih Spesifik Lagi</string>
+    <string name="back_button">Back Button</string>
+    <string name="profile">Profile</string>
+    <string name="type">Type</string>
+    <string name="location">Location</string>
+    <string name="company">Company</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="repository">Repository</string>
+</resources>
