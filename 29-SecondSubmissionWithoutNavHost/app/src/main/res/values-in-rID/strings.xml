@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SecondSubmissionWithoutNavHost</string>
+    <string name="app_version">Versi App</string>
+    <string name="copyright">Hak CIpta</string>
+    <string name="description1">Pengguna Tidak Ditemukan!</string>
+    <string name="description2">Silakan Cari Kembali</string>
+    <string name="followers">Pengikut</string>
+    <string name="following">Mengikuti</string>
+    <string name="repository">Berkas</string>
+    <string name="something_unexpected">Tidak Dapat Menjangkau Server</string>
+    <string name="button_language">Tombol Bahasa</string>
+    <string name="back_button">Tombol Kembali</string>
+    <string name="search">Cari</string>
+</resources>

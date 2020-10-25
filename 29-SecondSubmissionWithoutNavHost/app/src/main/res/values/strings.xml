@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">SecondSubmissionWithoutNavHost</string>
+    <string name="app_name" translatable="false">SecondSubmissionWithoutNavHost</string>
+    <string name="splash_logo" translatable="false">Splash Logo</string>
+    <string name="app_version">App Version</string>
+    <string name="copyright">Copyright 2020</string>
+    <string name="username" translatable="false">Username</string>
+    <string name="html_url" translatable="false">Html Url</string>
+    <string name="search">Search</string>
+    <string name="user_not_found" translatable="false">User Not Found</string>
+    <string name="description1">User Not Found!</string>
+    <string name="back_button">Back Button</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="repository">Repository</string>
+    <string name="something_unexpected">Unable Reach The Server</string>
+    <string name="github_logo" translatable="false">Github Logo</string>
+    <string name="description2">Please Search Again</string>
+    <string name="button_language">Button Language</string>
+    <string name="item_selected">Item Selected</string>
 </resources>

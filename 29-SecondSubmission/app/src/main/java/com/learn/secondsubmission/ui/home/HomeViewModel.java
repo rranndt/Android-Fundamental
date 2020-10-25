@@ -1,12 +1,9 @@
 package com.learn.secondsubmission.ui.home;
 
-import android.util.Log;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.learn.secondsubmission.adapter.ListUserSearchAdapter;
 import com.learn.secondsubmission.model.SearchUser;
 import com.learn.secondsubmission.network.Const;
 import com.learn.secondsubmission.network.RetrofitService;

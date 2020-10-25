@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:scrollbarSize="1dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_repo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:shimmer_auto_start="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/include_shimmer_repo" />
+
+            <include layout="@layout/include_shimmer_repo" />
+
+            <include layout="@layout/include_shimmer_repo" />
+
+            <include layout="@layout/include_shimmer_repo" />
+
+            <include layout="@layout/include_shimmer_repo" />
+
+            <include layout="@layout/include_shimmer_repo" />
+
+            <include layout="@layout/include_shimmer_repo" />
+
+            <include layout="@layout/include_shimmer_repo" />
+
+            <include layout="@layout/include_shimmer_repo" />
+
+            <include layout="@layout/include_shimmer_repo" />
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+</ScrollView>
