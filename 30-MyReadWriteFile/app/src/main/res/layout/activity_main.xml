@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header_linear"
+        android:layout_marginHorizontal="@dimen/tiny_margin"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:hint="@string/title"
+        android:inputType="textPersonName|textNoSuggestions"
+        android:padding="@dimen/tiny_margin" />
+
+    <EditText
+        android:id="@+id/edtContent"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/edtTitle"
+        android:layout_margin="@dimen/tiny_margin"
+        android:background="@android:color/white"
+        android:gravity="top|start"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:padding="@dimen/tiny_margin" />
+
+    <LinearLayout
+        android:id="@+id/header_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/btnNew"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/tiny_margin"
+            android:layout_weight="1"
+            android:text="@string/file_new" />
+
+        <Button
+            android:id="@+id/btnOpen"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/tiny_margin"
+            android:layout_marginBottom="@dimen/tiny_margin"
+            android:layout_weight="1"
+            android:text="@string/file_open" />
+
+        <Button
+            android:id="@+id/btnSave"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/tiny_margin"
+            android:layout_marginBottom="@dimen/tiny_margin"
+            android:layout_weight="1"
+            android:text="@string/file_save" />
+
+    </LinearLayout>
+
+</RelativeLayout>
