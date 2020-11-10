@@ -87,9 +87,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE) {
             if (resultCode == FormUserPreferenceActivity.RESULT_CODE) {
-                userModel = data.getParcelableExtra(FormUserPreferenceActivity.EXTRA_RESULT);
-                populateView(userModel);
-                checkForm(userModel);
+                if (data != null) {
+                    userModel = data.getParcelableExtra(FormUserPreferenceActivity.EXTRA_RESULT);
+                    populateView(userModel);
+                    checkForm(userModel);
+                }
             }
         }
     }
