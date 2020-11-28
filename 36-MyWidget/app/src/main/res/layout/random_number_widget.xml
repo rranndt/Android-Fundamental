@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#09C">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@color/design_default_color_primary"
+        android:orientation="horizontal"
+        android:padding="@dimen/widget_margin"
+        android:weightSum="9">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:padding="16dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/example_appwidget_preview" />
+
+        <TextView
+            android:id="@+id/appwidget_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="3"
+            android:contentDescription="@string/appwidget_text"
+            android:gravity="center"
+            android:text="@string/appwidget_text"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold|italic" />
+
+        <Button
+            android:id="@+id/btnClick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:background="@color/design_default_color_primary"
+            android:text="@string/generate"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</RelativeLayout>
