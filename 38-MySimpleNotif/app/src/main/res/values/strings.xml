@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MySimpleNotif</string>
+    <string name="content_title">Content Title</string>
+    <string name="content_text">Content Text</string>
+    <string name="subtext">Sub Text</string>
+    <string name="send_notif">Send Notif</string>
+</resources>
