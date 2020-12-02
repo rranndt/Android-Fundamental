@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyFirebaseCloudMessaging</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_defaul_channel</string>
+    <string name="subscribe_to_news">Subscribe to news</string>
+    <string name="log_token">Log Token</string>
+    <string name="default_notification_channel_name">News</string>
+    <string name="msg_subsribed">Subscribed to news topic</string>
+    <string name="msg_token" translatable="false">InstanceId Token: %s</string>
+</resources>
