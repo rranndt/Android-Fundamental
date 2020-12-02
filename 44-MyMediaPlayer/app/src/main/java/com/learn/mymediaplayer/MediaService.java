@@ -49,6 +49,7 @@ public class MediaService extends Service implements MediaPlayerCallback {
     private final Messenger mMessenger = new Messenger(new IncomingHandler(this));
 
     static class IncomingHandler extends Handler {
+
         private WeakReference<MediaPlayerCallback> mediaPlayerCallbackWeakReference;
 
         IncomingHandler(MediaPlayerCallback playerCallback) {
@@ -70,6 +71,7 @@ public class MediaService extends Service implements MediaPlayerCallback {
         }
     }
 
+    // Fungsi memutar
     @Override
     public void onPlay() {
         if (!isReady) {
@@ -85,6 +87,7 @@ public class MediaService extends Service implements MediaPlayerCallback {
         }
     }
 
+    // Fungsi menghentikan
     @Override
     public void onStop() {
         if (mMediaPlayer.isPlaying() || isReady) {
