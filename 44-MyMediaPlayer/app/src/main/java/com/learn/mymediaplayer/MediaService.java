@@ -1,6 +1,11 @@
 package com.learn.mymediaplayer;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.media.AudioAttributes;
@@ -15,6 +20,7 @@ import android.util.Log;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
@@ -72,6 +78,7 @@ public class MediaService extends Service implements MediaPlayerCallback {
         } else {
             if (mMediaPlayer.isPlaying()) {
                 mMediaPlayer.pause();
+                showNotif();
             } else {
                 mMediaPlayer.start();
             }
@@ -83,6 +90,7 @@ public class MediaService extends Service implements MediaPlayerCallback {
         if (mMediaPlayer.isPlaying() || isReady) {
             mMediaPlayer.stop();
             isReady = false;
+            stopNotif();
         }
     }
 
@@ -110,7 +118,6 @@ public class MediaService extends Service implements MediaPlayerCallback {
     }
 
     private void init() {
-
         // Berguna untuk memperbaharui MediaPlayer
         mMediaPlayer = new MediaPlayer();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -139,7 +146,7 @@ public class MediaService extends Service implements MediaPlayerCallback {
             public void onPrepared(MediaPlayer mp) {
                 isReady = true;
                 mMediaPlayer.start();
-
+                showNotif();
             }
         });
         mMediaPlayer.setOnErrorListener(new MediaPlayer.OnErrorListener() {
@@ -148,5 +155,41 @@ public class MediaService extends Service implements MediaPlayerCallback {
                 return false;
             }
         });
+    }
+
+    void showNotif() {
+        Intent notificationIntent = new Intent(this, MainActivity.class);
+        notificationIntent.setFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+
+        String CHANNEL_IMPORTANCE = "Channel_Test";
+        int ONGOING_NOTIFICATION_ID = 1;
+
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL_IMPORTANCE)
+                .setContentTitle("TEST1")
+                .setContentText("TEST2")
+                .setSmallIcon(R.drawable.ic_launcher_background)
+                .setContentIntent(pendingIntent)
+                .setTicker("TEST3")
+                .build();
+
+        createChannel(CHANNEL_IMPORTANCE);
+        startForeground(ONGOING_NOTIFICATION_ID, notification);
+    }
+
+    void createChannel(String CHANNEL_ID) {
+        NotificationManager mNotificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "Battery", NotificationManager.IMPORTANCE_DEFAULT);
+            channel.setShowBadge(false);
+            channel.setSound(null, null);
+            mNotificationManager.createNotificationChannel(channel);
+        }
+    }
+
+    void stopNotif() {
+        stopForeground(false);
     }
 }
