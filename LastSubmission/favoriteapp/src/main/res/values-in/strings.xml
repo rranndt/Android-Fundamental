@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Favorite App Submission</string>
+    <string name="username">Username</string>
+    <string name="html_url">Html Url</string>
+    <string name="followers">Pengikut</string>
+    <string name="following">Mengikuti</string>
+    <string name="repository">Berkas</string>
+    <string name="app_version">Versi Aplikasi</string>
+    <string name="data_not_found">Data Tidak Ditemukan</string>
+    <string name="user_not_found">Pengguna TIdak Ditemukan</string>
+    <string name="request_time_out">Gagal Mengakses Data</string>
+    <string name="no_internet">Koneksi Internet Tidak Tersedia</string>
+    <string name="add_to_favorite">Ditambahkan ke Favorite</string>
+    <string name="remove_from_favorite">Hilangkan dari Favorite</string>
+    <string name="something_went_wrong">Terjadi Kesalahan Server</string>
+    <string name="favorite">Favorit</string>
+    <string name="search">Cari</string>
+    <string name="change_your_language">Ubah Bahasa Aplikasi</string>
+    <string name="english">Inggris</string>
+    <string name="indonesia">Indonesia</string>
+    <string name="change_language">Ubah Bahasa ?</string>
+    <string name="alarm_reminder">Ingatkan Setiap Jam 9 ?</string>
+    <string name="notification_on">Notifikasi Dihidupkan</string>
+    <string name="notification_off">Notifikasi Dimatikan</string>
+    <string name="notification_title">Pengingat Aplikasi Github</string>
+    <string name="notification_body">Klik disini untuk membuka aplikasi</string>
+</resources>

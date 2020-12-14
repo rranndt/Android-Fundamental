@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivAvatarShimmer"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:src="@color/shimmer"
+        app:layout_constraintBottom_toTopOf="@id/tvUsernameShimmer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvUsernameShimmer"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@color/shimmer"
+        app:layout_constraintBottom_toTopOf="@id/tvTypeShimmer"
+        app:layout_constraintStart_toStartOf="@id/ivAvatarShimmer"
+        app:layout_constraintTop_toBottomOf="@id/ivAvatarShimmer" />
+
+    <TextView
+        android:id="@+id/tvTypeShimmer"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@color/shimmer"
+        app:layout_constraintBottom_toTopOf="@id/tvLocationShimmer"
+        app:layout_constraintStart_toStartOf="@id/tvUsernameShimmer"
+        app:layout_constraintTop_toBottomOf="@id/tvUsernameShimmer" />
+
+    <TextView
+        android:id="@+id/tvLocationShimmer"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@color/shimmer"
+        app:layout_constraintBottom_toTopOf="@id/tvCompanyShimmer"
+        app:layout_constraintStart_toStartOf="@id/tvUsernameShimmer"
+        app:layout_constraintTop_toBottomOf="@id/tvTypeShimmer" />
+
+    <TextView
+        android:id="@+id/tvCompanyShimmer"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:background="@color/shimmer"
+        app:layout_constraintBottom_toTopOf="@id/tvHtmlUrlShimmer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/tvUsernameShimmer"
+        app:layout_constraintTop_toBottomOf="@id/tvLocationShimmer" />
+
+    <TextView
+        android:id="@+id/tvHtmlUrlShimmer"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@color/shimmer"
+        app:layout_constraintStart_toStartOf="@id/tvUsernameShimmer"
+        app:layout_constraintTop_toBottomOf="@id/tvCompanyShimmer" />
+
+    <TextView
+        android:id="@+id/tvFollowersShimmer"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:background="@color/shimmer"
+        app:layout_constraintBottom_toBottomOf="@id/ivAvatarShimmer"
+        app:layout_constraintEnd_toStartOf="@id/tvFollowingShimmer"
+        app:layout_constraintStart_toEndOf="@id/ivAvatarShimmer"
+        app:layout_constraintTop_toTopOf="@id/ivAvatarShimmer"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/tvFollowingShimmer"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:background="@color/shimmer"
+        app:layout_constraintBottom_toBottomOf="@id/ivAvatarShimmer"
+        app:layout_constraintEnd_toStartOf="@id/tvReposShimmer"
+        app:layout_constraintStart_toEndOf="@id/tvFollowersShimmer"
+        app:layout_constraintTop_toTopOf="@id/ivAvatarShimmer"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/tvReposShimmer"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:background="@color/shimmer"
+        app:layout_constraintBottom_toBottomOf="@id/ivAvatarShimmer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvFollowingShimmer"
+        app:layout_constraintTop_toTopOf="@id/ivAvatarShimmer"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/tvTotFollowersShimmer"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:background="@color/shimmer"
+        app:layout_constraintEnd_toEndOf="@id/tvFollowersShimmer"
+        app:layout_constraintStart_toStartOf="@id/tvFollowersShimmer"
+        app:layout_constraintTop_toBottomOf="@id/tvFollowersShimmer" />
+
+    <TextView
+        android:id="@+id/tvTotFollowingShimmer"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:background="@color/shimmer"
+        app:layout_constraintEnd_toEndOf="@id/tvFollowingShimmer"
+        app:layout_constraintStart_toStartOf="@id/tvFollowingShimmer"
+        app:layout_constraintTop_toBottomOf="@id/tvFollowingShimmer" />
+
+    <TextView
+        android:id="@+id/tvTotReposShimmer"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:background="@color/shimmer"
+        app:layout_constraintEnd_toEndOf="@id/tvReposShimmer"
+        app:layout_constraintStart_toStartOf="@id/tvReposShimmer"
+        app:layout_constraintTop_toBottomOf="@id/tvReposShimmer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
